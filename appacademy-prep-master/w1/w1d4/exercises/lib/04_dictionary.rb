@@ -47,15 +47,12 @@ class Dictionary
   end
 
   def printable
-    str= ""
-    # debugger
+    str= []
     keywords.each do |word|
-      str += "[#{word}] \"#{@dict[word]}\""
-      if word != keywords.last
-        str += "\n"
-      end
+      str << "[#{word}] \"#{@dict[word]}\""
     end
-    str
+    str.join("\n")
   end
+
 
 end

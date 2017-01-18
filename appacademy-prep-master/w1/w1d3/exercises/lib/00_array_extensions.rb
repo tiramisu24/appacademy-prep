@@ -1,4 +1,3 @@
-require "byebug"
 # Sum
 #
 # Write an Array method, `sum`, that returns the sum of the elements in the
@@ -79,7 +78,6 @@ class Array
   def two_sum
     zeros = []
     idx1 = 0
-    idx2 = 1
     while idx1 < self.length
       idx2 = idx1 + 1
       num1 = self[idx1]
@@ -107,9 +105,7 @@ end
 
 class Array
   def median
-    if self.length == 0
-      return nil
-    end
+    return nil if self.length == 0
     arr = self.sort
     leng = arr.length
     if (leng)%2 ==0
@@ -171,15 +167,12 @@ class Array
   def my_transpose
     trans = []
     col = self[0].length
-    #creates the empty arrays
     col.times {trans << []}
     self.each do |row|
-      # debugger
       row.each_with_index do |num, idx|
         trans[idx] << num
       end
     end
-
     trans
 
   end

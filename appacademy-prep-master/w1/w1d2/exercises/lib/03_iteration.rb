@@ -1,4 +1,3 @@
-require "byebug"
 # ### Factors
 #
 # Write a method `factors(num)` that returns an array containing all the
@@ -160,7 +159,6 @@ end
 
 class Array
   def my_each(&prc)
-    # prc ||= Proc.new {}
     idx = 0
     while idx < self.length
       prc.call(self[idx])
@@ -222,9 +220,4 @@ end
 
 def concatenate(strings)
   strings.inject(""){|str1, str2| str1 + str2}
-  # sen = []
-  # strings.my_each do |word|
-  #   sen << word
-  # end
-  # sen.join()
 end

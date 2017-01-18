@@ -1,11 +1,9 @@
-require 'byebug'
 def translate(sentence)
   words = sentence.split
   pig_latin = []
   words.each do |word|
     temp_word = word
     word.each_char do |letter|
-      # debugger
       if is_vowel(letter)
         unless letter == 'u' && temp_word[-1] == 'q'
           break

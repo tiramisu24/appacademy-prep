@@ -8,18 +8,13 @@ end
 
 def sum(arr)
   sum = 0
-  arr.each do |num|
-    sum += num
-  end
+  arr.each {|num| sum += num }
   sum
 end
 
 def multiply (num1, *args)
   result = num1
-  args.each do |num|
-    result *= num
-  end
-
+  args.each { |num| result *= num}
   result
 end
 
@@ -28,9 +23,6 @@ def power(num,power)
 end
 
 def factorial(num)
-  # if num <1
-  #   return nil
-  # end
   fact = 1
   count = 1
   num.times do

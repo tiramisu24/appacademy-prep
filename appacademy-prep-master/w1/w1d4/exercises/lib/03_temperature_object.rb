@@ -9,10 +9,10 @@ class Temperature
   end
 
   def self.from_celsius(temp)
-    self.new(:c => temp)
+    self.new(c: temp)
   end
   def self.from_fahrenheit(temp)
-    self.new(:f => temp)
+    self.new(f: temp)
   end
 
   def in_celsius

@@ -1,4 +1,3 @@
-require "byebug"
 class Board
   attr_reader :grid
   def initialize(grid = [Array.new(3),Array.new(3),Array.new(3)] )
@@ -29,8 +28,8 @@ class Board
     top_right = @grid[0][2]
     bottom_left = @grid[2][0]
     win = nil
+
     #center
-    # debugger
     if center != nil
       if [center, @grid[0][0], @grid[2][2]].uniq.length == 1
         win = center
@@ -63,7 +62,6 @@ class Board
 
   def over?
     over = true
-    # debugger
     @grid.each do |row|
       if row.include?(nil) && !winner
         over = false
@@ -73,7 +71,6 @@ class Board
   end
 
   def display
-    # debugger
     str = ""
     @grid.each do |row|
       row.each do |col|

@@ -17,11 +17,10 @@
 # transmogrify("hello", options)
 # # options shouldn't change.
 # ```
-require "byebug"
 def transmogrify(str, options = {})
   default = { times: 1, upcase: false, reverse: false}
   options = default.merge(options)
-  # debugger
+
   new_str = [str]
   (options[:times]-1).times do |num|
     new_str << str
@@ -34,6 +33,5 @@ def transmogrify(str, options = {})
   if options[:reverse]
     new_str.reverse!
   end
-  # debugger
   new_str
 end

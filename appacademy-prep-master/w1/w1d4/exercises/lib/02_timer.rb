@@ -8,7 +8,7 @@ class Timer
     time = []
     sec = @seconds
     3.times do
-      value = sec%60
+      value = sec % 60
       num_str = ""
       if value < 10
         num_str = "0" + value.to_s

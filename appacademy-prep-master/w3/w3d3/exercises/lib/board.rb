@@ -1,6 +1,9 @@
 require "byebug"
+require_relative "board"
+require_relative "player"
 class Board
   attr_accessor :grid
+
   def initialize(grid = self.class.default_grid)
     @grid = grid
   end
@@ -10,7 +13,6 @@ class Board
   end
 
   def count
-    # debugger
     total = 0
     @grid.each do |row|
       row.each do |col|
@@ -47,7 +49,6 @@ class Board
   end
 
   def full?
-    # debugger
     @grid.each do |row|
       row.each do |col|
         if col == nil
@@ -82,5 +83,12 @@ class Board
       end
     end
     return true
+  end
+
+  def [](arr)
+    @grid[arr[0]][arr[1]]
+  end
+  def []=(arr, val)
+    @grid[arr[0]][arr[1]] = val
   end
 end

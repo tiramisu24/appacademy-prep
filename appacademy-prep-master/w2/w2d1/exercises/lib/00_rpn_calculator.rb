@@ -10,33 +10,25 @@ class RPNCalculator
   end
 
   def plus
-    if @rpn.empty?
-      raise Exception, "calculator is empty"
-    end
+    empty?
     last = @rpn.pop
     @rpn[-1] += last
   end
 
   def minus
-    if @rpn.empty?
-      raise Exception, "calculator is empty"
-    end
+    empty?
     last = @rpn.pop
     @rpn[-1] -= last
   end
 
   def times
-    if @rpn.empty?
-      raise Exception, "calculator is empty"
-    end
+    empty?
     last = @rpn.pop.to_f
     @rpn[-1] *= last
   end
 
   def divide
-    if @rpn.empty?
-      raise Exception, "calculator is empty"
-    end
+    empty?
     last = @rpn.pop.to_f
     @rpn[-1] /= last
   end
@@ -60,7 +52,6 @@ class RPNCalculator
 
   def evaluate(str)
     tokens(str).each do |output|
-      # debugger
       case output
       when :+
         plus
@@ -76,5 +67,10 @@ class RPNCalculator
     end
     value
   end
+
+  def empty?
+    raise Exception, "calculator is empty" if @rpn.empty?
+  end
+
 
 end

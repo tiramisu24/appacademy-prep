@@ -11,12 +11,6 @@ class Book
         temp << word.capitalize
       end
     end
-    temp.join(" ")
-
     @title = temp.join(" ")
-
-    # captilize(title)
   end
-
-
 end

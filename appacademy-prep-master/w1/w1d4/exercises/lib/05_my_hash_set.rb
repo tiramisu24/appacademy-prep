@@ -27,8 +27,9 @@
 #
 # Write a `set1#minus(set2)` method which returns a new set which includes
 # all the items of `set1` that aren't in `set2`.
-
+require "byebug"
 class MyHashSet
+  attr_reader :store
   def initialize
     @store = {}
   end
@@ -52,6 +53,36 @@ class MyHashSet
     return false
   end
 
+  def to_a
+    @store.keys
+  end
+
+  def union(set2)
+    arr = minus(set2)
+    set2.to_a.each{ |item| arr.insert(item)}
+    arr
+  end
+
+  def intersect(set2)
+    arr = self.class.new
+    self.to_a.each do |item|
+      if set2.include?(item)
+        arr.insert(item)
+      end
+    end
+    arr
+  end
+
+  def minus(set2)
+    arr = self.class.new
+    self.to_a.each do |item|
+      unless set2.include?(item)
+        arr.insert(item)
+      end
+    end
+    arr
+  end
+
 end
 
 # Bonus
@@ -61,3 +92,34 @@ end
 # - Write a `set1#==(object)` method. It should return true if `object` is
 #   a `MyHashSet`, has the same size as `set1`, and every member of
 #   `object` is a member of `set1`.
+
+def symmetric_difference(set2)
+  arr = minus(set2)
+  set2.to_a.each do |item|
+    unless set1.include?(item)
+      arr.insert(item)
+    end
+  arr
+end
+
+def ==(object)
+  unless object.class == MyHashSet
+    return false
+  end
+  if self.to_a.length != object.to_a.length
+    return false
+  end
+
+  self.to_a.each do |item|
+    if !object.include?(item)
+      return false
+    end
+  end
+
+  return true
+end
+
+
+
+
+end

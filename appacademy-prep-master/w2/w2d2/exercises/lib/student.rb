@@ -14,7 +14,6 @@ class Student
 
   def enroll(crs)
     unless has_conflict?(crs)
-      # debugger
       @courses << crs
       crs.students << self
     end
@@ -36,16 +35,8 @@ class Student
     conflict
   end
 
-  # def course_load
-  #   load = Hash.new(0)
-  #   self.courses.each do |course|
-  #     load[course.department] += course.credits
-  #   end
-  #   load
-  # end
   def course_load
     load = Hash.new(0)
-    debugger
     @courses.each do |course|
       load[course.department] += course.credits
     end

@@ -1,4 +1,3 @@
-require "byebug"
 class Code
   PEGS = {
     "R" => :red,
@@ -11,11 +10,9 @@ class Code
     attr_accessor :pegs
     def initialize(pegs)
       @pegs = pegs
-      #initilaize pegs
     end
 
     def self.parse(str)
-      # debugger
       input = str.split("").map(&:upcase)
       unless self.valid_color?(input)
         raise Exception
@@ -47,7 +44,6 @@ class Code
     end
 
     def exact_matches(guess)
-      # debugger
       matches = 0
       @pegs.each_with_index do |color, idx|
         if color == guess[idx]
@@ -58,7 +54,6 @@ class Code
     end
 
     def near_matches(guess)
-      # debugger
       matches = 0
       pegs_copy = @pegs.clone
       guess.pegs.each_with_index do |color, idx|
