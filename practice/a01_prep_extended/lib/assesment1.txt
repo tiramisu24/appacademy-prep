@@ -1,0 +1,41 @@
+assessment1 notes
+General
+  -run bundle install
+  -only w1d1 - w1d3
+  -pre curriculum
+  -can add &prc
+  -can modifiy default value called in
+  -don't require outside library
+  -can do map.with_index
+
+
+Algor
+  -with and without prc given
+  -with iteration and recursion
+  -quicksort
+  -merge_sort
+  -bubble sort
+  -binary sort
+
+  -fibonacci, recursive
+
+
+Functions
+Enumerables
+
+  -inject
+    no initial value, defaults to first values
+  -map
+  -select
+
+  Arrays
+  -shift
+  -pop
+  Strings
+
+
+Hash
+    -key?
+    -value?
+    -keys
+    -values

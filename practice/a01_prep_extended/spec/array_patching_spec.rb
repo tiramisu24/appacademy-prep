@@ -189,7 +189,7 @@ describe "my_bsearch" do
   it "Returns nil if the element is not in the array (smaller)" do
     expect([1, 2, 3, 4, 5, 6].my_bsearch(0)).to eq(nil)
   end
-
+  
   it "Returns nil if the element is not in the array (bigger)" do
     expect([1, 2, 3, 4, 5, 7].my_bsearch(6)).to eq(nil)
   end
